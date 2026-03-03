@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Sacramento&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255,255,255,0.2);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 48px;
+}
+
+p {
+    font-size: 18px;
+    min-height: 50px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    background: white;
+    color: #ff4b5c;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.heart {
+    position: absolute;
+    color: white;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(100vh); opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Hey Pumpkin ❤️</h1>
+    <p id="message"></p>
+    <button onclick="acceptLove()">Yes, I Choose You 💖</button>
+</div>
+
+<script>
+const text = "kulli...idrall en type madli anta gottagtilla but still that PDF proposal of yours was unique so may be adrudu reply inna unique agirbeku anta webpage all reply kodtidini..yeah you admired me, adored me, and i know you're obsessed with me but 3 years wait madodu andre joke alla thats a long wait, aa 3 years alli thumba clues kotte but i ignored them thinking its just a crush allva anta, days passed neen inna serious agode propose kuda maadbitte,now its my turn ...thumba time tagobardhu ankondidde aadru one year kelde but nearly 5 months(from 13-0ct-2025) tagondidini saaku inna time haal madakk ista illa kulli, ond swalpa risk tagonana anstide, to be honest.. I like spending time with you sharing everything & listening to your BAK!! BAK!! for hours, From the moment you walked into my life, everything felt brighter. And today, I want to say... Yes ❤️ I choose you,  I love you too kulli❤️❤️.";
+let i = 0;
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("message").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+    }
+}
+typeWriter();
+
+function acceptLove() {
+    alert("will you be mine..??❤️✨(whatsapp all reply kodu)");
+}
+
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}, 300);
+</script>
+
+</body>
+</html>
